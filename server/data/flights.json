@@ -1,0 +1,404 @@
+{
+    "flights": [
+        {
+            "from": "Jersey",
+            "fromFlag": "https://restcountries.eu/data/jey.svg",
+            "toFlag": "https://restcountries.eu/data/grc.svg",
+            "to": "Greece",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 01:08:43"
+        },
+        {
+            "from": "Côte d'Ivoire",
+            "fromFlag": "https://restcountries.eu/data/civ.svg",
+            "toFlag": "https://restcountries.eu/data/eth.svg",
+            "to": "Ethiopia",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 09:08:43"
+        },
+        {
+            "from": "Holy See",
+            "fromFlag": "https://restcountries.eu/data/vat.svg",
+            "toFlag": "https://restcountries.eu/data/aus.svg",
+            "to": "Australia",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 08:08:43"
+        },
+        {
+            "from": "Guernsey",
+            "fromFlag": "https://restcountries.eu/data/ggy.svg",
+            "toFlag": "https://restcountries.eu/data/gum.svg",
+            "to": "Guam",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Bonaire, Sint Eustatius and Saba",
+            "fromFlag": "https://restcountries.eu/data/bes.svg",
+            "toFlag": "https://restcountries.eu/data/cym.svg",
+            "to": "Cayman Islands",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Guadeloupe",
+            "fromFlag": "https://restcountries.eu/data/glp.svg",
+            "toFlag": "https://restcountries.eu/data/arm.svg",
+            "to": "Armenia",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 06:08:43"
+        },
+        {
+            "from": "Greece",
+            "fromFlag": "https://restcountries.eu/data/grc.svg",
+            "toFlag": "https://restcountries.eu/data/jpn.svg",
+            "to": "Japan",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Burundi",
+            "fromFlag": "https://restcountries.eu/data/bdi.svg",
+            "toFlag": "https://restcountries.eu/data/gab.svg",
+            "to": "Gabon",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Guatemala",
+            "fromFlag": "https://restcountries.eu/data/gtm.svg",
+            "toFlag": "https://restcountries.eu/data/jpn.svg",
+            "to": "Japan",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Isle of Man",
+            "fromFlag": "https://restcountries.eu/data/imn.svg",
+            "toFlag": "https://restcountries.eu/data/gmb.svg",
+            "to": "Gambia",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Japan",
+            "fromFlag": "https://restcountries.eu/data/jpn.svg",
+            "toFlag": "https://restcountries.eu/data/deu.svg",
+            "to": "Germany",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Iraq",
+            "fromFlag": "https://restcountries.eu/data/irq.svg",
+            "toFlag": "https://restcountries.eu/data/civ.svg",
+            "to": "Côte d'Ivoire",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 06:08:43"
+        },
+        {
+            "from": "Bahamas",
+            "fromFlag": "https://restcountries.eu/data/bhs.svg",
+            "toFlag": "https://restcountries.eu/data/atf.svg",
+            "to": "French Southern Territories",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Antigua and Barbuda",
+            "fromFlag": "https://restcountries.eu/data/atg.svg",
+            "toFlag": "https://restcountries.eu/data/grd.svg",
+            "to": "Grenada",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 06:08:43"
+        },
+        {
+            "from": "Armenia",
+            "fromFlag": "https://restcountries.eu/data/arm.svg",
+            "toFlag": "https://restcountries.eu/data/grl.svg",
+            "to": "Greenland",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 07:08:43"
+        },
+        {
+            "from": "Greece",
+            "fromFlag": "https://restcountries.eu/data/grc.svg",
+            "toFlag": "https://restcountries.eu/data/cuw.svg",
+            "to": "Curaçao",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 12:08:43"
+        },
+        {
+            "from": "Bonaire, Sint Eustatius and Saba",
+            "fromFlag": "https://restcountries.eu/data/bes.svg",
+            "toFlag": "https://restcountries.eu/data/can.svg",
+            "to": "Canada",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Bahamas",
+            "fromFlag": "https://restcountries.eu/data/bhs.svg",
+            "toFlag": "https://restcountries.eu/data/arm.svg",
+            "to": "Armenia",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Bahrain",
+            "fromFlag": "https://restcountries.eu/data/bhr.svg",
+            "toFlag": "https://restcountries.eu/data/cok.svg",
+            "to": "Cook Islands",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 08:08:43"
+        },
+        {
+            "from": "Iraq",
+            "fromFlag": "https://restcountries.eu/data/irq.svg",
+            "toFlag": "https://restcountries.eu/data/isr.svg",
+            "to": "Israel",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Bermuda",
+            "fromFlag": "https://restcountries.eu/data/bmu.svg",
+            "toFlag": "https://restcountries.eu/data/umi.svg",
+            "to": "United States Minor Outlying Islands",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "18-11-2019 11:08:43"
+        },
+        {
+            "from": "Bulgaria",
+            "fromFlag": "https://restcountries.eu/data/bgr.svg",
+            "toFlag": "https://restcountries.eu/data/and.svg",
+            "to": "Andorra",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Gabon",
+            "fromFlag": "https://restcountries.eu/data/gab.svg",
+            "toFlag": "https://restcountries.eu/data/aus.svg",
+            "to": "Australia",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 07:08:43"
+        },
+        {
+            "from": "French Southern Territories",
+            "fromFlag": "https://restcountries.eu/data/atf.svg",
+            "toFlag": "https://restcountries.eu/data/cok.svg",
+            "to": "Cook Islands",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Brunei Darussalam",
+            "fromFlag": "https://restcountries.eu/data/brn.svg",
+            "toFlag": "https://restcountries.eu/data/dma.svg",
+            "to": "Dominica",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 12:08:43"
+        },
+        {
+            "from": "Japan",
+            "fromFlag": "https://restcountries.eu/data/jpn.svg",
+            "toFlag": "https://restcountries.eu/data/idn.svg",
+            "to": "Indonesia",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 12:08:43"
+        },
+        {
+            "from": "Virgin Islands (U.S.)",
+            "fromFlag": "https://restcountries.eu/data/vir.svg",
+            "toFlag": "https://restcountries.eu/data/dnk.svg",
+            "to": "Denmark",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Honduras",
+            "fromFlag": "https://restcountries.eu/data/hnd.svg",
+            "toFlag": "https://restcountries.eu/data/est.svg",
+            "to": "Estonia",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 06:08:43"
+        },
+        {
+            "from": "Germany",
+            "fromFlag": "https://restcountries.eu/data/deu.svg",
+            "toFlag": "https://restcountries.eu/data/ggy.svg",
+            "to": "Guernsey",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Cocos (Keeling) Islands",
+            "fromFlag": "https://restcountries.eu/data/cck.svg",
+            "toFlag": "https://restcountries.eu/data/brb.svg",
+            "to": "Barbados",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 08:08:43"
+        },
+        {
+            "from": "Jersey",
+            "fromFlag": "https://restcountries.eu/data/jey.svg",
+            "toFlag": "https://restcountries.eu/data/bol.svg",
+            "to": "Bolivia (Plurinational State of)",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 01:08:43"
+        },
+        {
+            "from": "Egypt",
+            "fromFlag": "https://restcountries.eu/data/egy.svg",
+            "toFlag": "https://restcountries.eu/data/bra.svg",
+            "to": "Brazil",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Albania",
+            "fromFlag": "https://restcountries.eu/data/alb.svg",
+            "toFlag": "https://restcountries.eu/data/gib.svg",
+            "to": "Gibraltar",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Canada",
+            "fromFlag": "https://restcountries.eu/data/can.svg",
+            "toFlag": "https://restcountries.eu/data/civ.svg",
+            "to": "Côte d'Ivoire",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 01:08:43"
+        },
+        {
+            "from": "Falkland Islands (Malvinas)",
+            "fromFlag": "https://restcountries.eu/data/flk.svg",
+            "toFlag": "https://restcountries.eu/data/ken.svg",
+            "to": "Kenya",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 12:08:43"
+        },
+        {
+            "from": "Bangladesh",
+            "fromFlag": "https://restcountries.eu/data/bgd.svg",
+            "toFlag": "https://restcountries.eu/data/bdi.svg",
+            "to": "Burundi",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 07:08:43"
+        },
+        {
+            "from": "Georgia",
+            "fromFlag": "https://restcountries.eu/data/geo.svg",
+            "toFlag": "https://restcountries.eu/data/bgr.svg",
+            "to": "Bulgaria",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "18-11-2019 11:08:43"
+        },
+        {
+            "from": "Congo",
+            "fromFlag": "https://restcountries.eu/data/cog.svg",
+            "toFlag": "https://restcountries.eu/data/grl.svg",
+            "to": "Greenland",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 07:08:43"
+        },
+        {
+            "from": "Iceland",
+            "fromFlag": "https://restcountries.eu/data/isl.svg",
+            "toFlag": "https://restcountries.eu/data/cxr.svg",
+            "to": "Christmas Island",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Bouvet Island",
+            "fromFlag": "https://restcountries.eu/data/bvt.svg",
+            "toFlag": "https://restcountries.eu/data/bvt.svg",
+            "to": "Bouvet Island",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 03:08:43"
+        },
+        {
+            "from": "Bulgaria",
+            "fromFlag": "https://restcountries.eu/data/bgr.svg",
+            "toFlag": "https://restcountries.eu/data/ben.svg",
+            "to": "Benin",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 08:08:43"
+        },
+        {
+            "from": "Isle of Man",
+            "fromFlag": "https://restcountries.eu/data/imn.svg",
+            "toFlag": "https://restcountries.eu/data/bes.svg",
+            "to": "Bonaire, Sint Eustatius and Saba",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Guadeloupe",
+            "fromFlag": "https://restcountries.eu/data/glp.svg",
+            "toFlag": "https://restcountries.eu/data/gnb.svg",
+            "to": "Guinea-Bissau",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Italy",
+            "fromFlag": "https://restcountries.eu/data/ita.svg",
+            "toFlag": "https://restcountries.eu/data/bgd.svg",
+            "to": "Bangladesh",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Chile",
+            "fromFlag": "https://restcountries.eu/data/chl.svg",
+            "toFlag": "https://restcountries.eu/data/slv.svg",
+            "to": "El Salvador",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 06:08:43"
+        },
+        {
+            "from": "Chad",
+            "fromFlag": "https://restcountries.eu/data/tcd.svg",
+            "toFlag": "https://restcountries.eu/data/bgr.svg",
+            "to": "Bulgaria",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 05:08:43"
+        },
+        {
+            "from": "Denmark",
+            "fromFlag": "https://restcountries.eu/data/dnk.svg",
+            "toFlag": "https://restcountries.eu/data/cyp.svg",
+            "to": "Cyprus",
+            "departure": "18-11-2019 08:08:43",
+            "arrival": "19-11-2019 12:08:43"
+        },
+        {
+            "from": "Cuba",
+            "fromFlag": "https://restcountries.eu/data/cub.svg",
+            "toFlag": "https://restcountries.eu/data/ita.svg",
+            "to": "Italy",
+            "departure": "18-11-2019 10:08:43",
+            "arrival": "19-11-2019 04:08:43"
+        },
+        {
+            "from": "Guernsey",
+            "fromFlag": "https://restcountries.eu/data/ggy.svg",
+            "toFlag": "https://restcountries.eu/data/asm.svg",
+            "to": "American Samoa",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        },
+        {
+            "from": "Brazil",
+            "fromFlag": "https://restcountries.eu/data/bra.svg",
+            "toFlag": "https://restcountries.eu/data/bes.svg",
+            "to": "Bonaire, Sint Eustatius and Saba",
+            "departure": "18-11-2019 09:08:43",
+            "arrival": "19-11-2019 02:08:43"
+        }
+    ]
+}
