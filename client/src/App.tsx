@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/pages/home";
 import SignIn from "./components/pages/signIn";
 import SignUp from "./components/pages/signUp";
+import Register from "./components/pages/register"
 
 class App extends React.Component<any, any> {
     constructor(props: any) {
@@ -81,6 +82,7 @@ class App extends React.Component<any, any> {
                     <Switch>
                         <Route path="/signIn" component={SignIn} />
                         <Route path="/signup" component={SignUp} />
+                        <Route path="/register" component={Register} />
                         <Route path="/home" component={Home} />
                         <Route path="**" component={() => <h1> Not Found! </h1>} />
                     </Switch>

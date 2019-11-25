@@ -1,12 +1,1 @@
-{
-    "users": [
-        {
-            "email": "galamo@gmail.com",
-            "password": "12345"
-        },
-        {
-            "email": "galamo@gmail.com",
-            "password": "1ss2345sssddfdssssss"
-        }
-    ]
-}
+{"users":[{"email":"galamo@gmail.com","password":"12345"},{"email":"galamo@gmail.com","password":"1ss2345sssddfdssssss"},{"email":"gal","password":"1234"}]}

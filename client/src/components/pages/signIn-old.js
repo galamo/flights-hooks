@@ -12,7 +12,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import useCustomForm from "../../hooks/useCustomForm"
+
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -44,8 +44,17 @@ export default function SignIn() {
     const classes = useStyles();
     // data and setData are params (1:object, 2:function)
     const initialState = { email: "", password: null }
-    const [data, handleChange] = useCustomForm(initialState)
+    const [formData, setFormData] = useState(initialState)
     const [clicks, setClicks] = useState(10)
+    console.log("render =>?")
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+        setClicks(0)
+
+    }
+
+
 
     return (
         <Container component="main" maxWidth="xs">
@@ -69,7 +78,7 @@ export default function SignIn() {
                         name="email"
                         autoComplete="email"
                         autoFocus
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     <TextField
                         variant="outlined"
@@ -81,7 +90,7 @@ export default function SignIn() {
                         type="password"
                         id="password"
                         autoComplete="current-password"
-                        onChange={handleChange}
+                        onChange={handleInputChange}
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
@@ -94,8 +103,8 @@ export default function SignIn() {
                         color="primary"
                         className={classes.submit}
                         onClick={() => {
-
-                            console.log(data)
+                            setClicks(clicks + 1)
+                            console.log(formData)
                         }}
                     >
                         Sign In
