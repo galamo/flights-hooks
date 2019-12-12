@@ -4,13 +4,18 @@ require("dotenv").config()
 const authRouter = require("./routes/auth");
 const flightsRouter = require("./routes/flights")
 const vacationsRouter = require("./routes/vacations")
+const northwind = require("./routes/northwind")
 const validateSession = require("./routes/validateSession");
+const db = require("./db/index");
+
 const logger = require("./utils/logger");
 const cors = require("cors");
 // const {checkEnvParams} = require("../internal_modules/checkEnvParams");
 // checkEnvParams(["PORT","SECRET"])
 const app = express()
-
+db.connect(() => {
+    console.log("connected to database");
+})
 // function checkEnvVariables(){
 //     const { PORT } = process.env;
 //     if(!PORT){
@@ -19,6 +24,8 @@ const app = express()
 //     }
 // }
 // checkEnvVariables();
+
+
 app.use(cors())
 app.use("/static", express.static("images"))
 app.use(bodyParser.json())
@@ -27,10 +34,13 @@ app.get("/hc", (req, res, next) => {
     res.send("ok")
 })
 
+app.use("/northwind", northwind)
+
 app.use("/auth", authRouter) //2 entries loaded.. 
 app.use(validateSession)
 app.use("/flights", flightsRouter)
 app.use("/vacations", vacationsRouter)
+
 
 app.listen(process.env.PORT, () => {
     console.log("listening  to: " + process.env.PORT)

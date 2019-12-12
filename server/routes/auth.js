@@ -22,6 +22,8 @@ router.post("/login", (req, res, next) => {
 router.post("/register", (req, res, next) => {
     const { users } = usersData;
     const { email, password } = req.body
+    //hash password
+
     //ANOTHER VALIDATION (email already exist, bad request , conflict 409 )
     fs.writeFile("./data/users.json",
         JSON.stringify({ users: [...users, { email, password }] }), (err) => {
