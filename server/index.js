@@ -42,6 +42,10 @@ app.use("/flights", flightsRouter)
 app.use("/vacations", vacationsRouter)
 
 
+app.use((error, req, res, next) => {
+    res.send(error)
+})
+
 app.listen(process.env.PORT, () => {
     console.log("listening  to: " + process.env.PORT)
     logger.info(`server is listening to port: ${process.env.PORT}`)

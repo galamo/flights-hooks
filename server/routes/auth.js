@@ -5,42 +5,82 @@ const usersData = require("../data/users.json");
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const pool = require("../db/pool")
+const bcrypt = require('bcryptjs'); // npm install
+const salt = bcrypt.genSaltSync(10);
+// const salt2 = bcrypt.genSaltSync(8);
+// console.log("salt", salt)
+// console.log("salt2", salt2)
+// console.log(bcrypt.hashSync("password", salt))
+// console.log(bcrypt.hashSync("password", salt2))
 
-router.post("/login", (req, res, next) => {
-    const { users } = usersData;
-    const { email, password } = req.body
-    // const userExist = users.find(user => user.email === email && user.password === password);
-    // if (!userExist) return res.status(401).send("error")
-    // //GENERATE SESSION
-    // const token = jwt.sign({
-    //     userExist
-    // }, process.env.SECRET, { expiresIn: '1h' });
-    // console.log(token)
-    res.json({ message: "user logged in", token })
+console.log(bcrypt.hashSync("password", salt))
+
+
+router.post("/login", async (req, res, next) => {
+    try {
+        const { users } = usersData;
+        const { email, password } = req.body
+        const user = await isUserExist(email, password);
+        if (!user) return res.status(401).send("ERROR LOGIN") // change to general error
+        const jwtToken = await getJwt({ ...user, password: null })
+        return res.json({ message: "user logged in", token: jwtToken })
+    } catch (ex) {
+        console.log(ex)
+        if (!user) return res.status(401).send("ERROR LOGIN")
+    }
+
 })
 
-router.post("/register", async (req, res, next) => {
-    const { users } = usersData;
 
-    //hash password
-    const user = await isUserExist();
+router.post("/register", async (req, res, next) => {
+    const { email, password } = req.body
+    const user = await isUserExist(email);
     if (user) return res.json({ message: "user already exist" })
-    const result = await saveUser(req.body)
-    res.json(result)
+
+    const insertId = await saveUser(req.body)
+    if (insertId) return res.json({ message: "user saved!" })
+    return res.json({ message: "error!" })
+
 })
 
 
 
 module.exports = router;
 
-async function isUserExist(email) {
-    const [user] = await pool.execute("select * from users where email = ?", [email])
-    return user;
+
+
+function getJwt(p) {
+    return new Promise((resolve, reject) => {
+        jwt.sign(p, process.env.SECRET, { expiresIn: '1h' }, (err, token) => {
+            if (err) reject("error")
+            resolve(token)
+        })
+    })
 }
+
+
+
+async function isUserExist(email, password = null) {
+    const payload = password ? [email, bcrypt.hashSync(password, salt)] : [email]
+    const query = password ? getUserPasswordExistQuery() : getUserExistQuery()
+    const [result] = await pool.execute(query, payload)
+    const [firstUser] = result;
+    return firstUser;
+}
+
 
 async function saveUser(payload) {
     const { email, password, firstName = null, lastName = null } = payload
-    return await pool.execute(getUserInsertionQuery(), [email, password, firstName, lastName])
+    const [result] = await pool.execute(getUserInsertionQuery(), [email, bcrypt.hashSync(password, salt), firstName, lastName])
+    return result.insertId
+}
+
+function getUserExistQuery() {
+    return "SELECT * FROM `northwind`.`users` where email = ?";
+}
+
+function getUserPasswordExistQuery() {
+    return "SELECT * FROM `northwind`.`users` where email = ? and password = ?";
 }
 function getUserInsertionQuery() {
     return "INSERT INTO `northwind`.`users` (`email`, `password`, `first_name`, `last_name`) VALUES (?,?,?,?)"
