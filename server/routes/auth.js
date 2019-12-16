@@ -21,18 +21,11 @@ router.post("/login", (req, res, next) => {
 
 router.post("/register", async (req, res, next) => {
     const { users } = usersData;
-    const { email, password, firstName = null, lastName = null } = req.body
+
     //hash password
-    // if (isUserExist()) {
-
-    // }
-    const result = await pool.execute(getUserInsertionQuery(), [email, password, firstName, lastName])
-
-    //ANOTHER VALIDATION (email already exist, bad request , conflict 409 )
-    // fs.writeFile("./data/users.json",
-    //     JSON.stringify({ users: [...users, { email, password }] }), (err) => {
-    //         if (err) console.log(err);
-    //     })
+    const user = await isUserExist();
+    if (user) return res.json({ message: "user already exist" })
+    const result = await saveUser(req.body)
     res.json(result)
 })
 
@@ -40,10 +33,15 @@ router.post("/register", async (req, res, next) => {
 
 module.exports = router;
 
-// function isUserExist() {
-//     const
-// }
+async function isUserExist(email) {
+    const [user] = await pool.execute("select * from users where email = ?", [email])
+    return user;
+}
 
+async function saveUser(payload) {
+    const { email, password, firstName = null, lastName = null } = payload
+    return await pool.execute(getUserInsertionQuery(), [email, password, firstName, lastName])
+}
 function getUserInsertionQuery() {
     return "INSERT INTO `northwind`.`users` (`email`, `password`, `first_name`, `last_name`) VALUES (?,?,?,?)"
 
