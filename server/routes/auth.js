@@ -46,6 +46,22 @@ router.post("/register", async (req, res, next) => {
 })
 
 
+router.get("/verify", async (req, res, next) => {
+    try {
+        setTimeout(() => {
+            const { authorization } = req.headers
+            jwt.verify(authorization, process.env.SECRET, (err, decoded) => {
+                if (err) return res.json({ status: false })
+                console.log(decoded)
+                return res.json({ status: true })
+            })
+        }, 2000);
+    } catch (ex) {
+
+        return res.json({ status: false })
+    }
+
+})
 
 module.exports = router;
 

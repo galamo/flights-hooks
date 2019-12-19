@@ -48,7 +48,7 @@ export default function SignIn(props) {
     const [data, handleChange] = useCustomForm(initialState)
     const [clicks, setClicks] = useState(10)
     const loginApi = async () => {
-        console.log(data)
+
         const result = await axios.post("http://localhost:3200/auth/login", { ...data })
         const { data: response } = result
         const { token, message } = response

@@ -7,6 +7,7 @@ interface IProps {
 export default function Home(props: IProps) {
 
     const [flights, setFlights] = useState({})
+    const [status, setLoadingStatus] = useState("loading")
 
     const callServer = async () => {
         try {
@@ -31,12 +32,25 @@ export default function Home(props: IProps) {
 
     useEffect(() => {
         const initReq = async () => {
+            console.log("request start 1")
+            const verify = await mainAxios.get("/auth/verify");
+            const { data } = verify;
+            const { status: serverStatus } = data;
+            if (!serverStatus) {
+                props.history.push("/signIn")
+                return;
+            }
+
+            setLoadingStatus(serverStatus)
             const result = await callServerFlights()
             setFlights(result)
+            console.log("request 1")
         }
         initReq()
     }, [])
 
+
+    if (status === 'loading') return <div className="loader"></div>
     return <div>
         {isAuthClient()}
         <h1> Home Page </h1>
@@ -48,3 +62,4 @@ export default function Home(props: IProps) {
 function isAuthClient() {
     if (!localStorage.getItem("token")) return <Redirect to="/signIn" />
 }
+
