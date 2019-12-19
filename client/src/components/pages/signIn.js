@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import useCustomForm from "../../hooks/useCustomForm"
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -40,12 +41,29 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function SignIn() {
+export default function SignIn(props) {
     const classes = useStyles();
     // data and setData are params (1:object, 2:function)
     const initialState = { email: "", password: null }
     const [data, handleChange] = useCustomForm(initialState)
     const [clicks, setClicks] = useState(10)
+    const loginApi = async () => {
+        console.log(data)
+        const result = await axios.post("http://localhost:3200/auth/login", { ...data })
+        const { data: response } = result
+        const { token, message } = response
+        if (message === "redirect" && token) {
+            localStorage.setItem("token", token)
+            props.history.push("/home")
+
+        } else {
+            alert("user is not logged in")
+        }
+
+
+
+
+    }
 
     return (
         <Container component="main" maxWidth="xs">
@@ -93,10 +111,7 @@ export default function SignIn() {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
-                        onClick={() => {
-
-                            console.log(data)
-                        }}
+                        onClick={loginApi}
                     >
                         Sign In
           </Button>

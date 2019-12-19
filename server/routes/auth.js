@@ -6,24 +6,26 @@ const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const pool = require("../db/pool")
 const bcrypt = require('bcryptjs'); // npm install
-const salt = bcrypt.genSaltSync(10);
-// const salt2 = bcrypt.genSaltSync(8);
+// const salt = 1
+const salt = "$2a$08$rqcFcjwJ2cmaXxHsGBz3Hu"
+
 // console.log("salt", salt)
 // console.log("salt2", salt2)
 // console.log(bcrypt.hashSync("password", salt))
 // console.log(bcrypt.hashSync("password", salt2))
 
-console.log(bcrypt.hashSync("password", salt))
+console.log("salt is validated:", bcrypt.hashSync("password", salt))
 
 
 router.post("/login", async (req, res, next) => {
     try {
-        const { users } = usersData;
         const { email, password } = req.body
+        console.log(email, password)
         const user = await isUserExist(email, password);
+        console.log(user)
         if (!user) return res.status(401).send("ERROR LOGIN") // change to general error
         const jwtToken = await getJwt({ ...user, password: null })
-        return res.json({ message: "user logged in", token: jwtToken })
+        return res.json({ message: "redirect", token: jwtToken })
     } catch (ex) {
         console.log(ex)
         if (!user) return res.status(401).send("ERROR LOGIN")
@@ -62,6 +64,8 @@ function getJwt(p) {
 
 async function isUserExist(email, password = null) {
     const payload = password ? [email, bcrypt.hashSync(password, salt)] : [email]
+    // const payload = password ? [email, password] : [email]
+
     const query = password ? getUserPasswordExistQuery() : getUserExistQuery()
     const [result] = await pool.execute(query, payload)
     const [firstUser] = result;
@@ -72,6 +76,8 @@ async function isUserExist(email, password = null) {
 async function saveUser(payload) {
     const { email, password, firstName = null, lastName = null } = payload
     const [result] = await pool.execute(getUserInsertionQuery(), [email, bcrypt.hashSync(password, salt), firstName, lastName])
+    // const [result] = await pool.execute(getUserInsertionQuery(), [email, password, firstName, lastName])
+
     return result.insertId
 }
 

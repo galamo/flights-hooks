@@ -33,10 +33,7 @@ app.use(bodyParser.json())
 app.get("/hc", (req, res, next) => {
     res.send("ok")
 })
-app.get("/test", (req, res, next) => {
-    console.log(req.headers)
-    res.send("main axios is working...")
-})
+
 
 app.use("/northwind", northwind)
 
