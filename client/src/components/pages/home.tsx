@@ -1,6 +1,17 @@
 import React from "react";
-
+import mainAxios from "../../axios/mainAxios"
 
 export default function Home() {
-    return <h1>HOME</h1>
+
+    const callServer = async () => {
+
+        console.log("request sent to server");
+        const result = await mainAxios.get("test")
+        console.log(result)
+    }
+
+    return <div>
+        <h1> Home Page </h1>
+        <button onClick={callServer}>  Call server </button>
+    </div>
 }
