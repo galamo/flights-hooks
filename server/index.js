@@ -14,7 +14,7 @@ const cors = require("cors");
 // checkEnvParams(["PORT","SECRET"])
 const app = express();
 db.connect(() => {
-  console.log("connected to database");
+    console.log("connected to database");
 });
 // function checkEnvVariables(){
 //     const { PORT } = process.env;
@@ -30,7 +30,7 @@ app.use("/static", express.static("images"));
 app.use(bodyParser.json());
 
 app.get("/hc", (req, res, next) => {
-  res.send("ok");
+    res.send("ok");
 });
 
 app.use("/northwind", northwind);
@@ -41,10 +41,10 @@ app.use("/flights", flightsRouter);
 app.use("/vacations", vacationsRouter);
 
 app.use((error, req, res, next) => {
-  res.send(error);
+    res.send(error);
 });
 
 app.listen(process.env.PORT, () => {
-  console.log("listening  to: " + process.env.PORT);
-  logger.info(`server is listening to port: ${process.env.PORT}`);
+    console.log("listening  to: " + process.env.PORT);
+    logger.info(`server is listening to port: ${process.env.PORT}`);
 });
