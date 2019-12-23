@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 // import Header from "./components/header"
 import { productsWithImages, images } from "./images/imagesLoader";
+import { routes } from "components/appRouter/routers.config"
 
 import ButtonAppBar from "./components/navBar/index";
 
@@ -10,7 +11,7 @@ import Home from "./components/pages/home";
 import SignIn from "./components/pages/signIn";
 import SignUp from "./components/pages/signUp";
 import Register from "./components/pages/register"
-
+import { AppRoutes } from "components/appRouter/appRouter"
 class App extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
@@ -80,11 +81,11 @@ class App extends React.Component<any, any> {
                     <ButtonAppBar />
 
                     <Switch>
-                        <Route path="/signIn" component={SignIn} />
-                        <Route path="/signup" component={SignUp} />
-                        <Route path="/register" component={Register} />
+                        {/* <Route path="/signIn" component={SignIn} />
+                        <Route path="/signUp" component={Register} />
                         <Route path="/home" component={Home} />
-                        <Route path="**" component={() => <h1> Not Found! </h1>} />
+                        <Route path="**" component={() => <h1> Not Found! </h1>} /> */}
+                        <AppRoutes routes={routes} />
                     </Switch>
                 </BrowserRouter>
             </div>
