@@ -25,7 +25,7 @@ router.post("/login", async (req, res, next) => {
         console.log(user)
         if (!user) return res.status(401).send("ERROR LOGIN") // change to general error
         const jwtToken = await getJwt({ ...user, password: null })
-        return res.json({ message: "redirect", token: jwtToken })
+        return res.json({ message: "redirect", token: jwtToken, status: true })
     } catch (ex) {
         console.log(ex)
         if (!user) return res.status(401).send("ERROR LOGIN")
@@ -36,11 +36,13 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/register", async (req, res, next) => {
     const { email, password } = req.body
+    console.log(email, password)
     const user = await isUserExist(email);
+    if (!email || !password) return res.json({ message: "error" })
     if (user) return res.json({ message: "user already exist" })
 
     const insertId = await saveUser(req.body)
-    if (insertId) return res.json({ message: "user saved!" })
+    if (insertId) return res.json({ message: "user saved!", status: true })
     return res.json({ message: "error!" })
 
 })
