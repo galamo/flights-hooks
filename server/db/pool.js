@@ -3,13 +3,14 @@ const { HOST,
     USER,
     DB_PORT,
     PASSWORD,
-    DATABASE } = process.env
+    DATABASE,
+    DB_USER } = process.env
 
 const pool = mysql2.createPool(
     {
         host: HOST,
         port: DB_PORT,
-        user: USER,
+        user: DB_USER,
         password: PASSWORD,
         database: DATABASE,
         waitForConnections: true,
